@@ -4991,11 +4991,11 @@ function prompt_vim_shell() {
 }
 
 _p9k_prompt_vim_shell_init() {
-  typeset -g "_p9k__segment_cond_${_p9k__prompt_side}[_p9k__segment_index]"='$VIMRUNTIME'
+  typeset -g "_p9k__segment_cond_${_p9k__prompt_side}[_p9k__segment_index]"='${VIMRUNTIME:-$MYVIFMRC}'
 }
 
 function instant_prompt_vim_shell() {
-  _p9k_prompt_segment prompt_vim_shell green $_p9k_color1 VIM_ICON 0 '$VIMRUNTIME' ''
+  _p9k_prompt_segment prompt_vim_shell green $_p9k_color1 VIM_ICON 0 '${VIMRUNTIME:-$MYVIFMRC}' ''
 }
 
 function prompt_nix_shell() {
